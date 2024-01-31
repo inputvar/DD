@@ -4,31 +4,31 @@ import { Link } from 'react-router-dom';
 // import DocumentUpload from '../components/DocumentUpload';
 
 function SignUp() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [reEnterPassword, setReEnterPassword] = useState('');
-  // const [documents, setDocuments] = useState([]);
+  // const [username, setUsername] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [reEnterPassword, setReEnterPassword] = useState('');
+  // // const [documents, setDocuments] = useState([]);
 
-  const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
+  // const handleChange = (e) => {
+  //   const { name, value, type, files } = e.target;
     // if (type === 'file') {
     //   // Handle file input
     //   const selectedFiles = Array.from(files);
     //   // setDocuments(selectedFiles);
     // } else {
       // Handle other input fields
-      if (name === 'username') {
-        setUsername(value);
-      } else if (name === 'email') {
-        setEmail(value);
-      } else if (name === 'password') {
-        setPassword(value);
-      } else if (name === 'reEnterPassword') {
-        setReEnterPassword(value);
-      }
-    }
-  };
+  //     if (name === 'username') {
+  //       setUsername(value);
+  //     } else if (name === 'email') {
+  //       setEmail(value);
+  //     } else if (name === 'password') {
+  //       setPassword(value);
+  //     } else if (name === 'reEnterPassword') {
+  //       setReEnterPassword(value);
+  //     }
+  //   }
+  // };
 
   // const handleRemoveFile = (index) => {
   //   const updatedFiles = [...documents];
@@ -36,24 +36,24 @@ function SignUp() {
   //   setDocuments(updatedFiles);
   // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    const formData = new FormData(); // Create a FormData object
+  //   const formData = new FormData(); // Create a FormData object
 
-    // Append form fields and files to the FormData object
-    formData.append('username', username);
-    formData.append('email', email);
-    formData.append('password', password);
-    formData.append('reEnterPassword', reEnterPassword);
+  //   // Append form fields and files to the FormData object
+  //   // formData.append('username', username);
+  //   // formData.append('email', email);
+  //   // formData.append('password', password);
+  //   // formData.append('reEnterPassword', reEnterPassword);
 
-    if (password !== reEnterPassword) {
-      // Display an error message to the user or prevent form submission
-      alert('Passwords do not match');
-      return;
-    }
+  //   if (password !== reEnterPassword) {
+  //     // Display an error message to the user or prevent form submission
+  //     alert('Passwords do not match');
+  //     return;
+  //   }
 
-    // Append files
+  //   // Append files
     // for (const file of documents) {
     //   formData.append('documents', file);
     // }
@@ -100,7 +100,7 @@ function SignUp() {
                 <div className="flex flex-wrap -mx-3 mb-4">
                   <div className="w-full px-3 mb-4">
                     <label
-                      htmlFor="username"
+                      // htmlFor="username"
                       className="block text-gray-300 text-sm font-medium mb-1"
                     >
                       Username:
@@ -109,8 +109,8 @@ function SignUp() {
                       type="text"
                       id="username"
                       name="username"
-                      value={username}
-                      onChange={handleChange}
+                      // value={username}
+                      // onChange={handleChange}
                       className="form-input w-full text-gray h-10 border border-black-300 rounded-lg"
                       placeholder="username"
                       required
@@ -118,7 +118,7 @@ function SignUp() {
                   </div>
                   <div className="w-full px-3 mb-4">
                     <label
-                      htmlFor="email"
+                      // htmlFor="email"
                       className="block text-gray-300 text-sm font-medium mb-1"
                     >
                       Email:
@@ -127,8 +127,8 @@ function SignUp() {
                       type="email"
                       id="email"
                       name="email"
-                      value={email}
-                      onChange={handleChange}
+                      // value={email}
+                      // onChange={handleChange}
                       className="form-input w-full text-gray h-10 border border-black-300 rounded-lg"
                       placeholder="you@yourcompany.com"
                       required
@@ -136,7 +136,7 @@ function SignUp() {
                   </div>
                   <div className="w-full px-3 mb-4">
                     <label
-                      htmlFor="password"
+                      // htmlFor="password"
                       className="block text-gray-300 text-sm font-medium mb-1"
                     >
                       Password:
@@ -145,8 +145,8 @@ function SignUp() {
                       type="password"
                       id="password"
                       name="password"
-                      value={password}
-                      onChange={handleChange}
+                      // value={password}
+                      // onChange={handleChange}
                       className="form-input w-full text-gray h-10 border border-black-300 rounded-lg"
                       placeholder="password"
                       required
@@ -163,8 +163,8 @@ function SignUp() {
                       type="password"
                       id="reEnterPassword"
                       name="reEnterPassword"
-                      value={reEnterPassword}
-                      onChange={handleChange}
+                      // value={reEnterPassword}
+                      // onChange={handleChange}
                       className="form-input w-full text-gray h-10 border border-black-300 rounded-lg"
                       placeholder="re-enter password"
                       required
@@ -254,4 +254,4 @@ function SignUp() {
     </>
   );
 }
-export default SignUp
+export default SignUp;
