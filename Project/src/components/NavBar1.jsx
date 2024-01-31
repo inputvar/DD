@@ -38,14 +38,14 @@ const NavBar1 = () => {
             Sign Up
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
           to="/dashboard"
           className='p-4 btn-sm text-white text-lg bg-purple-700 hover:bg-purple-500 py-3 px-5 ml-5 rounded'
         >
           Dashboard
         </Link>
-        </li>
+        </li> */}
       </ul>
       <div onClick={handleNav} className='block md:hidden'>
         {!nav ? (

@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import NavBar1 from '../components/NavBar1';
 import { Link } from 'react-router-dom';
-import DocumentUpload from '../components/DocumentUpload';
+// import DocumentUpload from '../components/DocumentUpload';
 
 function SignUp() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [reEnterPassword, setReEnterPassword] = useState('');
-  const [documents, setDocuments] = useState([]);
+  // const [documents, setDocuments] = useState([]);
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
-    if (type === 'file') {
-      // Handle file input
-      const selectedFiles = Array.from(files);
-      setDocuments(selectedFiles);
-    } else {
+    // if (type === 'file') {
+    //   // Handle file input
+    //   const selectedFiles = Array.from(files);
+    //   // setDocuments(selectedFiles);
+    // } else {
       // Handle other input fields
       if (name === 'username') {
         setUsername(value);
@@ -30,11 +30,11 @@ function SignUp() {
     }
   };
 
-  const handleRemoveFile = (index) => {
-    const updatedFiles = [...documents];
-    updatedFiles.splice(index, 1);
-    setDocuments(updatedFiles);
-  };
+  // const handleRemoveFile = (index) => {
+  //   const updatedFiles = [...documents];
+  //   updatedFiles.splice(index, 1);
+  //   setDocuments(updatedFiles);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,34 +54,34 @@ function SignUp() {
     }
 
     // Append files
-    for (const file of documents) {
-      formData.append('documents', file);
-    }
+    // for (const file of documents) {
+    //   formData.append('documents', file);
+    // }
 
-      try {
-    const response = await fetch('/api/signup', {
-      method: 'POST',
-      body: formData,
-    });
+    //   try {
+    // const response = await fetch('/api/signup', {
+    //   method: 'POST',
+    //   body: formData,
+    // });
   
-    if (response.ok) {
-      const data = await response.json();
-      // Handle successful response (e.g., redirect, show success message)
-      console.log('Response from server:', data);
-    } else {
-      const errorData = await response.json(); // Parse the error response
-      if (errorData.error) {
-        // Display the error message to the user
-        alert(errorData.error);
-      } else {
-        // Handle other error scenarios
-        console.error('Error:', response.statusText);
-      }
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-  };
+  //   if (response.ok) {
+  //     const data = await response.json();
+  //     // Handle successful response (e.g., redirect, show success message)
+  //     console.log('Response from server:', data);
+  //   } else {
+  //     const errorData = await response.json(); // Parse the error response
+  //     if (errorData.error) {
+  //       // Display the error message to the user
+  //       alert(errorData.error);
+  //     } else {
+  //       // Handle other error scenarios
+  //       console.error('Error:', response.statusText);
+  //     }
+  //   }
+  // } catch (error) {
+  //   console.error('Error:', error);
+  // }
+  // };
 
   return (
     <>
@@ -96,7 +96,7 @@ function SignUp() {
             </div>
 
             <div className="max-w-sm mx-auto bg-zinc-800/60 p-8 rounded-xl shadow-md">
-              <form onSubmit={handleSubmit}>
+              <form>
                 <div className="flex flex-wrap -mx-3 mb-4">
                   <div className="w-full px-3 mb-4">
                     <label
@@ -171,7 +171,7 @@ function SignUp() {
                     />
                   </div>
                 </div>
-                <div className="mt-4">
+                {/* <div className="mt-4">
                   {documents.map((file, index) => (
                     <div key={index} className="flex items-center mb-2">
                       <span className="mr-2 text-white hover:text-grey">
@@ -186,10 +186,10 @@ function SignUp() {
                       </button>
                     </div>
                   ))}
-                </div>
-                <div className="flex items-center justify-center w-full"> 
-                  <DocumentUpload/>
-                </div>
+                </div> */}
+                {/* <div className="flex items-center justify-center w-full"> 
+                  {/* <DocumentUpload/> */}
+                {/* </div> */}
                 {/* <div className="flex items-center justify-center w-full">
                   <label
                     htmlFor="dropzone-file"
@@ -254,5 +254,4 @@ function SignUp() {
     </>
   );
 }
-
-export default SignUp;
+export default SignUp
